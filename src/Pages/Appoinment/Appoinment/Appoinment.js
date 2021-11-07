@@ -3,7 +3,7 @@ import Navigation from '../../Home/Shared/Navigation/Navigation';
 import AppointmentHeader from '../AppointmentHeader/AppointmentHeader';
 import AvailabeAppointment from '../AvailabeAppointment/AvailabeAppointment';
 
-const Appoinment = () => {
+const Appointment = () => {
     const [date , setDate] = React.useState(new Date());
     return (
         <div>
@@ -14,4 +14,4 @@ const Appoinment = () => {
     );
 };
 
-export default Appoinment;
+export default Appointment;
