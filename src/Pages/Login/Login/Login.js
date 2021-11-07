@@ -9,7 +9,7 @@ import { useHistory,useLocation } from "react-router-dom";
 
 const Login = () => {
     const [loginData,setLoginData] = useState({});
-    const {authErr, user , loginUser, isLoading} = useAuth();
+    const {authErr, user , loginUser, signInWithGoogle, isLoading} = useAuth();
 
     const location = useLocation()
     const history = useHistory();
@@ -27,6 +27,10 @@ const Login = () => {
         loginUser(loginData.email, loginData.password , location, history)
         // alert('DONE✅')
         e.preventDefault();
+    }
+
+    const handleGoogleSignIn = () =>{
+      signInWithGoogle(location, history);
     }
     return (
         <Container>
@@ -61,6 +65,8 @@ const Login = () => {
                     to='/register'>
                       <Button variant='text'>New user? Please register</Button>
                   </NavLink> 
+                  <p>-------------------------------------@-----------------------------------</p>
+                  <Button onClick={handleGoogleSignIn} style={{backgroundColor:'#60E2E3'}} variant='contained'>Google Sign In</Button>
                  </form>
                  {
                    isLoading && <LinearProgress />
